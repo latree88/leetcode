@@ -8,7 +8,7 @@ public class strStr{
     }
 
     public int strStr(String haystack, String needle){
-        if(haystack == null || needle == null){
+       if (haystack == null || needle == null){
             return -1;
         } 
 
