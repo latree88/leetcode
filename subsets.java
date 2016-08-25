@@ -1,3 +1,6 @@
+// key point:
+// s[n] = s[n-1] + [n] + (add n for each previous subsets)
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.ArrayList;
@@ -23,14 +26,17 @@ class subsets{
 		for(int i = 0; i < len; i++){
 			ArrayList<ArrayList<Integer>> temp  = new ArrayList<ArrayList<Integer>>();
 
+			// add all sets from previous result to temp
 			for(List<Integer> a : result){
 				temp.add(new ArrayList<Integer>(a));
 			}
 
+			// add current number to all sets
 			for(ArrayList<Integer> a : temp){
 				a.add(nums[i]);
 			}
 
+			// add single number set to result
 			ArrayList<Integer> single = new ArrayList<Integer>();
 			single.add(nums[i]);
 			temp.add(single);
