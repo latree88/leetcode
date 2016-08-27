@@ -28,6 +28,9 @@ class subsets{
 
 			// add all sets from previous result to temp
 			for(List<Integer> a : result){
+				//!!!!!!!!!!!!!!!
+				//!!!!!!!!!!!!!!!
+				// when add element in ArrayList, you need to make an instance instead of add directly.
 				temp.add(new ArrayList<Integer>(a));
 			}
 
