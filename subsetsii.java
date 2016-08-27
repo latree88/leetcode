@@ -8,9 +8,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 
-class subsetsii{
+class Subsetsii{
 	public static void main(String arg[]){
-		subsetsii obj = new subsetsii();
+		Subsetsii obj = new Subsetsii();
 
 	}
 

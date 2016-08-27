@@ -1,6 +1,6 @@
-public class strStr{
+public class StrStr{
     public static void main(String[] args){
-        strStr obj = new strStr(); 
+        StrStr obj = new StrStr(); 
         String s1 = null;
         String s2 = "a";
         int output = obj.strStr(s1, s2);

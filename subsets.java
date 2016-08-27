@@ -5,9 +5,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.ArrayList;
 
-class subsets{
+class Subsets{
 	public static void main(String args[]){
-		subsets obj = new subsets();
+		Subsets obj = new Subsets();
 
 		int [] nums = {1,2,3};
 		obj.subsets(nums);
