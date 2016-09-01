@@ -1,3 +1,6 @@
+// key point
+// Corner cases!!!
+// array out of bounds!!
 public class SearchForARange{
 	public static void main(String args[]){
 		SearchForARange obj = new SearchForARange();
