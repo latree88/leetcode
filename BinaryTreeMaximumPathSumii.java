@@ -35,6 +35,10 @@ public class BinaryTreeMaximumPathSumii{
 		int left = helper(root.left, max);
 		int right = helper(root.right, max);
 
+
+		// *************
+		// be carefule with the case that subtree 
+		// path sum can be negative
 		return Math.max(root.val, Math.max(left + root.val, right + root.val));
 	}
 }
