@@ -1,7 +1,7 @@
-public class PalindromPartitioningii{
+public class PalindromePartitioningii{
 	public static void main(String args[]){
-		PalindromPartitioningii obj = new PalindromPartitioningii();
-		Stirng source;
+		PalindromePartitioningii obj = new PalindromePartitioningii();
+		String source = "aab";
 
 		int rslt = obj.minCut(source);
 
@@ -15,8 +15,24 @@ public class PalindromPartitioningii{
 
 		int size = s.length();
 		int[] cuts = new int[size + 1];
-		cuts[0] = 1;
+		boolean[][] palindrome = new boolean[size][size];
 
+		for(int i = 0; i < size; i++){
+			cuts[i] = size - i; 
+		}
+
+		for(int i = size - 1; i >= 0; --i){
+			for(int j = i; j < size; ++j){
+				if((s.charAt(i) == s.charAt(j) && (j - i < 2)) 
+					|| (s.charAt(i) == s.charAt(j) && palindrome[i + 1][j - 1])){
+
+					palindrome[i][j] = true;
+					cuts[i] = Math.min(cuts[i], cuts[j + 1] + 1);
+				}
+			}
+		}
+
+		return cuts[0] - 1;
 
 	}
 
