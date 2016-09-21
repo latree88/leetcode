@@ -20,6 +20,8 @@ public class RemoveNodeInBinarySearchTree{
 
 	}
 
+	// first, find the target node to delete
+	// also need to find target node's parent
     public TreeNode removeNode(TreeNode root, int value){
         if(root == null){
             return null;
@@ -44,6 +46,7 @@ public class RemoveNodeInBinarySearchTree{
         return nodeHelper.left;
     }
 
+    // find target node's parents
     public TreeNode findNode(TreeNode root, int value, TreeNode myParent){
         if(root == null){
             return myParent;
@@ -63,6 +66,13 @@ public class RemoveNodeInBinarySearchTree{
     }
 
     public void removeHelper(TreeNode myParent, TreeNode deleteTarget){
+        // there are three case need to consider
+    	// 1. target node has no children
+    	// 2. target node has one child
+    	// 3. target node has two children
+
+    	// first case.
+    	// delete that target node
         if(deleteTarget.left == null && deleteTarget.right == null){
             if(myParent.left == deleteTarget){
                 myParent.left = null;
@@ -71,6 +81,8 @@ public class RemoveNodeInBinarySearchTree{
                 myParent.right = null;
             }
         }
+        // second case
+        // delete that node and connect parents and child
         else if(deleteTarget.left != null && deleteTarget.right == null){
             if(myParent.left == deleteTarget){
                 myParent.left = deleteTarget.left;
@@ -87,6 +99,11 @@ public class RemoveNodeInBinarySearchTree{
                 myParent.right = deleteTarget.right;
             }
         }
+
+        // third case
+        // find the minimum larger number that greater than target node
+        // replace target node value with that minimum larger number
+        // delete that minimum larger number node
         else{
             TreeNode minNode = findMinNode(deleteTarget);
 
