@@ -1,0 +1,55 @@
+public class QuickSort{
+
+
+	public static void main(String args[]){
+		int[] toSort = {-3, 1, 1, -3, 5};
+
+		new QuickSort().sortInteger(toSort);
+
+		for(int i = 0; i < toSort.length; i++){
+			System.out.println(toSort[i]);
+		}
+	}
+
+
+	public void sortInteger(int[] A){
+		quickSort(A, 0, A.length - 1);
+	}
+
+
+	public void quickSort(int[] A, int start, int end){
+
+		if(start >= end){
+			return;
+		}
+		int left =  start;
+		int right =  end;
+
+		int pivot = A[(start + end) / 2];
+
+
+		while(left <= right){
+			while(left <= right && A[left] < pivot){
+				++left;
+			}
+
+			while(left <= right && A[right] > pivot){
+				--right;
+			}
+
+			if(left <= right){
+				int temp = A[left];
+				A[left] = A[right];
+				A[right] = temp;
+
+				++left;
+				--right;
+			}
+
+		}
+
+		quickSort(A, start, right);
+		quickSort(A, left, end);
+	}
+
+}
