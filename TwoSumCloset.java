@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class TwoSumCloset{
 	public static void main(String args[]){
 		int[] nums = {-1,2,1,-4};
@@ -15,17 +17,25 @@ public class TwoSumCloset{
 			return -1;
 		}
 
+		Arrays.sort(nums);
+		int i = 0;
+		int j = nums.length - 1;
 		int diff = Integer.MAX_VALUE;
-		for(int i = 0; i < nums.length; i++){
-			for(int j = i; j < nums.length; j++){
-				if(i != j){
-					int temp = Math.abs(target - (nums[i] + nums[j]));
 
-					diff = Math.min(diff, temp);
-					// System.out.println("temp: " + temp);
-					// System.out.println("diff: " + diff);
-
+		while(i < j){
+			if(nums[i] + nums[j] < target){
+				if(target - nums[i] - nums[j] < diff){
+					diff = target - nums[i] - nums[j];
 				}
+
+				++i;
+			}
+			else{
+				if(nums[i] + nums[j] - target < diff){
+					diff = nums[i] + nums[j] - target;
+				}
+
+				--j;
 			}
 		}
 
