@@ -60,7 +60,7 @@ class Subsets{
 	// *******************  key point
 	// this is the most important method!!!!!
 	// recursion and DFS algorithm 
-
+	// myPos 的作用是防止重复
     public ArrayList<ArrayList<Integer>> subsets(int[] nums) {
         // write your code here
         ArrayList<ArrayList<Integer>> rslt = new ArrayList<>();

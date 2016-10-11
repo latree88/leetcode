@@ -1,5 +1,8 @@
 import java.util.ArrayList;
 
+
+// calculate three numbers from the smallest number and 
+// put smallest number into list after calculated
 public class UglyNumberii{
 	public static void main(String args[]){
 
