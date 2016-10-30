@@ -1,4 +1,4 @@
-public class LowestCommonAncestorii{
+public class LowestCommonAncestoriii{
 	public static class TreeNode{
 		int val;
 		TreeNode left = null;
@@ -17,7 +17,7 @@ public class LowestCommonAncestorii{
 		root.right = new TreeNode(3);
 
 		TreeNode temp = new TreeNode(8);
-		LowestCommonAncestorii obj = new LowestCommonAncestorii();
+		LowestCommonAncestoriii obj = new LowestCommonAncestoriii();
 
 		
 	}
